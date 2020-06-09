@@ -1,12 +1,10 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 const path = require('path');
 
-if (require('electron-squirrel-startup')) {
-  app.quit();
-}
+let win;
 
-const createWindow = () => {
-  const win = new BrowserWindow({
+function createWindow () {
+  win = new BrowserWindow({
     width: 400,
     height: 500,
     icon: path.resolve(__dirname, 'images', 'atomTemplate.png'),
@@ -14,7 +12,6 @@ const createWindow = () => {
     alwaysOnTop: true,
     autoHideMenuBar: true,
     webPreferences: {
-      devTools: true,
       nodeIntegration: true
     }
   });
@@ -22,5 +19,27 @@ const createWindow = () => {
   win.loadURL('http://localhost:3000')
 };
 
+function toggleDevTools() {
+  win.webContents.toggleDevTools();
+}
 
-app.on('ready', createWindow);
+function toggleGoBack() {
+  win.webContents.goBack();
+}
+
+function toggleGoForward() {
+  win.webContents.goForward();
+}
+
+function createShortcuts() {
+  globalShortcut.register('Super+j', toggleDevTools)
+  globalShortcut.register('Super+b', toggleGoBack)
+  globalShortcut.register('Super+f', toggleGoForward)
+}
+
+
+app.whenReady().then(createWindow).then(createShortcuts);
+
+app.on('quit', () => {
+  globalShortcut.unregisterAll();
+})
