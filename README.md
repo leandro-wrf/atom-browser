@@ -5,42 +5,64 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/leandro-wrf/atom-browser?color=000&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/app-electronjs-1d1d1d?style=flat-square" />
 
-  <img src="https://img.shields.io/github/license/leandro-wrf/atom-browser?color=000&style=for-the-badge" />
-</p>
+  <img src="https://img.shields.io/badge/make-electron--forge-1d1d1d?style=flat-square" />
 
-<p>My first application in <a href="https://www.electronjs.org/">ElectronJs</a>.
+  <img src="https://img.shields.io/badge/platform-Debian-d70a53?style=flat-square&logo=debian" />
+
+  <img src="https://img.shields.io/badge/platform-Ubuntu-dd4814?style=flat-square&logo=ubuntu" />
+
+  <img src="https://img.shields.io/badge/license-MIT-1d1d1d?style=flat-square" />
 </p>
 
 <p>
-  I'm use electron-forge to create my applications.
-  For the creation of debian / ubuntu packages some dependencies are needed:
+  A mini browser to projects in ReactJs.<br />
+  That application open URL: http://localhost:3000.
 </p>
 
-    # Install dependencies debian/ubuntu
-    sudo apt install fakeroot unzip
+<h1>🚀 How to usage</h1>
 
+```
+# Clone this repo:
+#    
+  git clone https://github.com/leanro-wrf/atom-browser
 
-<h1>How to usage</h1>
+# Open project and install dependecies
+# With yarn
 
-    # Clone this repo:
-    
-    git clone https://github.com/leanro-wrf/atom-browser
+  cd atom-browser && yarn
 
-    # Open project and install dependecies
-    # with yarnpkg
+# With npm
 
-    cd atom-browser && yarn
+  cd atom-browser && npm install
 
-    # with npmjs
+# Build application Debian/Ubuntu
+# Install dependencies
+#
+  sudo apt install fakeroot unzip
+  yarn make
 
-    cd atom-browser && npm install
+# Alter URL
+# Open file config/url.js
+```
 
-    # Build application Windows or Debian/Ubuntu
+<h3>✏ Shortcuts</h3>
 
-    yarn make
+```
+# Go Forward
+#
+ Super + F
 
-<h1>LICENSE</h1>
+# Go Back
+#
+ Super + B
+
+# Open DevTools
+#
+ Super + J
+```
+
+<h1>📝 License</h1>
 
 <p>License MIT.</p>
