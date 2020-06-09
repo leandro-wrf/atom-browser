@@ -37,6 +37,15 @@
 
   cd atom-browser && npm install
 
+# Run app
+# 
+  yarn start
+
+# Case surge an Error about SandBox
+# Run this command line
+
+  yarn electron --no-sandbox index.js
+
 # Build application Debian/Ubuntu
 # Install dependencies
 #
