@@ -21,12 +21,6 @@
       "packagerConfig": {},
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "atom_browser"
-          }
-        },
-        {
           "name": "@electron-forge/maker-deb",
           "config": {}
         }
